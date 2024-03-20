@@ -62,6 +62,8 @@ $ npm run test:cov
 * ![GraphQL Request](./images/graphQLRequest.png)
 * ![GraphQL Response](./images/graphQLResponse.png)
 * ![REST Request](./images/restRequest.png)
+* When the Schema is simple, both REST and GraphQL has average execution time of 20-30 ms
+* Lambda cold-start is about 2500ms
 
 ## References
 * [Scalfolding Nest](https://docs.nestjs.com/)
