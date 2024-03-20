@@ -37,7 +37,13 @@ $ npm run start:prod
 
 ## Build
 * For `nest build` or `tsc`, and start the Lambda function locally:
-`npm run build && npx serverless offline`
+* Local lambda build: `npm run build && npx serverless offline`
+
+## AWS Deployment
+* Option 1: `npm run deploy:sls`, make sure that `pino` logger and `autoSchemaFile` are not run in Production
+  Lambda does not allow write permission on run-time code, except for /tmp folder.
+* Option 2: Using CDK deployment (TODO)
+* Make sure to [enable CORS on Api Gateway](https://docs.datomic.com/cloud/tech-notes/cors-lambda-proxy.html)
 
 ## Test
 
