@@ -58,6 +58,11 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## API Gateway with both REST and GraphQL available at the same time
+* ![GraphQL Request](.images/graphQLRequest.png)
+* ![GraphQL Response](.images/graphQLResponse.png)
+* ![REST Request](.images/restResponse.png)
+
 ## References
 * [Scalfolding Nest](https://docs.nestjs.com/)
 `npm i -g @nestjs/cli` and `nest new project-name`
