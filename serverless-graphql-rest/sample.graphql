@@ -45,3 +45,7 @@ mutation removeAbc {
     name
   }
 }
+
+##For Request with on raw body, use JSON.stringfy(query)
+#Sample:
+#{"query":"query ListSchedules($scheduleAction: ScheduleAction, $input: ListSchedulesInput) {\n  listSchedules(scheduleAction: $scheduleAction, input: $input) {\n    error\n    message\n    result {\n      NextToken\n      Schedules\n      __typename\n    }\n    status\n    __typename\n  }\n}\n","variables":{"input":{"NamePrefix":"AAA1-","MaxResults":100},"scheduleAction":"list"}}

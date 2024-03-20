@@ -25,6 +25,7 @@ $ npm install
 
 ```bash
 # development
+$ ada credentials update --account=058264141888 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once
 $ npm run start
 
 # watch mode
