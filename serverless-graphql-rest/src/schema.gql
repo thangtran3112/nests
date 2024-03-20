@@ -3,28 +3,33 @@
 # ------------------------------------------------------
 
 type Tour {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """tourId (placeholder)"""
+  tourId: Int!
+
+  """tour name (placeholder)"""
+  name: String!
 }
 
 type Query {
-  tours: [Tour!]!
-  tour(id: Int!): Tour!
+  getAllTours: [Tour!]!
+  getTour(tourId: Int!): Tour!
 }
 
 type Mutation {
   createTour(createTourInput: CreateTourInput!): Tour!
   updateTour(updateTourInput: UpdateTourInput!): Tour!
-  removeTour(id: Int!): Tour!
+  removeTour(tourId: Int!): Tour!
 }
 
 input CreateTourInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """tourId (placeholder)"""
+  tourId: Int!
+
+  """tour name (placeholder)"""
+  name: String!
 }
 
 input UpdateTourInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  tourId: Int!
+  name: String!
 }

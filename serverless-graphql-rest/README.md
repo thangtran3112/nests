@@ -2,7 +2,7 @@
 * Boiler plate code for NestJS with Node20x
 * Deployment with AWS Serverless on Api Gateway and Lambda
 * Deployment with AWS on ECS
-* Deployment with Google Cloud
+* Deployment with Google Cloud Function
 * Reference: https://github.com/nestjs/docs.nestjs.com/issues/96
 
 ## Description
@@ -17,9 +17,9 @@ $ npm install
 
 ## Creating nest resource
 * Tours REST endpoint will be deployed on root <LambdaURL> or <localhost:3000>
-`nest g resource tours` and setup REST Api endpoint for tours CRUD
+`nest g resource tours`
 * Books GraphQL endpoint will be deployed on <LambdaURL/graphql> or <localhost:3000/graphql>
-`nest g rosource books` and setup GraphQL Api endpoint for books CRUD
+`nest g rosource books`
 
 ## Running the app
 
@@ -33,6 +33,10 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## Build
+* For `nest build` or `tsc`, and start the Lambda function locally:
+`npm run build && npx serverless offline`
 
 ## Test
 
@@ -57,3 +61,9 @@ $ npm run test:cov
 * Using [Joi](https://joi.dev) and Class Validator for configs and DTO. Alternatives are [validator](https://www.npmjs.com/package/validator)
 * Logger with [Pino](https://www.npmjs.com/package/nestjs-pino?activeTab=readme):
 `npm i pino-http pino-pretty nestjs-pino`
+* [Serverless Instructions with Nest](https://docs.nestjs.com/faq/serverless):
+```
+npm i @codegenie/serverless-express aws-lambda
+npm i -D @types/aws-lambda serverless-offline
+```
+* [Official Serverless Instructions](https://www.serverless.com/framework/docs/tutorial)

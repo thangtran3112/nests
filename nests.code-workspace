@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "./serverless-graphql-rest"
+		},
+		{
+			"path": "./nest-graphql-serverless"
 		}
 	],
 	"settings": {}
