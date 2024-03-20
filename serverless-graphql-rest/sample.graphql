@@ -1,0 +1,47 @@
+## This file contains some example of testing GraphQL interface through Playground
+## If deployment is local, the Graphical Playground can be accessed by browser at
+## http://localhost:3000/graphql
+
+## If using Postman, use HttpRequest, POST method on both Queries and Mutation
+## Select Body type as GraphQL, and use the same queries and mutations belows in Request Body
+
+query getAllBlahBlah{
+  getAllTours {
+    tourId,
+    name
+  }
+}
+
+query getATour{
+  getTour(tourId: 4567) {
+    tourId,
+    name
+  }
+}
+
+mutation createBlahBlah {
+  createTour (createTourInput: {
+    tourId: 4567, 
+    name: "Pyramid Camel Tour"
+  }) {
+    tourId,
+    name
+  }
+}
+
+mutation updateAbc {
+  updateTour (updateTourInput: {
+    tourId: 3112, 
+    name: "Grand Canyon Sightseeing"
+  }) {
+    tourId,
+    name
+  }
+}
+
+mutation removeAbc {
+  removeTour(tourId : 1234) {
+    tourId,
+    name
+  }
+}

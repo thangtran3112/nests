@@ -2,6 +2,9 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 
 @InputType()
 export class CreateTourInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  @Field(() => Int, { description: 'tourId (placeholder)' })
+  tourId: number;
+
+  @Field(() => String, { description: 'tour name (placeholder)' })
+  name: string;
 }

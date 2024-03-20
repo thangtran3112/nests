@@ -1,26 +1,42 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTourInput } from './dto/create-tour.input';
 import { UpdateTourInput } from './dto/update-tour.input';
+import { Tour } from './entities/tour.entity';
 
 @Injectable()
 export class ToursService {
-  create(createTourInput: CreateTourInput) {
-    return 'This action adds a new tour';
+  //Boilerplate code without actual repository
+  static tours: Tour[] = [
+    {
+      tourId: 1234,
+      name: 'Amazon tour',
+    },
+  ];
+
+  async create(createTourInput: CreateTourInput) {
+    ToursService.tours.push(createTourInput);
+    return this.findOne(createTourInput.tourId);
   }
 
-  findAll() {
-    return `This action returns all tours`;
+  async findAll(): Promise<Tour[]> {
+    return ToursService.tours;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} tour`;
+  async findOne(tourId: number): Promise<Tour> {
+    return ToursService.tours.find((tour) => tour.tourId === tourId);
   }
 
-  update(id: number, updateTourInput: UpdateTourInput) {
-    return `This action updates a #${id} tour`;
+  async update(updateTourInput: UpdateTourInput) {
+    const tour = await this.findOne(updateTourInput.tourId);
+    tour.name = updateTourInput.name;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} tour`;
+  async remove(tourId: number) {
+    const toBeDeletedTour = await this.findOne(tourId);
+    const remainingTours = ToursService.tours.filter(
+      (tour) => tour.tourId !== tourId,
+    );
+    ToursService.tours = remainingTours;
+    return toBeDeletedTour;
   }
 }

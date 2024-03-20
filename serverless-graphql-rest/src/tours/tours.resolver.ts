@@ -9,27 +9,28 @@ export class ToursResolver {
   constructor(private readonly toursService: ToursService) {}
 
   @Mutation(() => Tour)
-  createTour(@Args('createTourInput') createTourInput: CreateTourInput) {
+  async createTour(@Args('createTourInput') createTourInput: CreateTourInput) {
     return this.toursService.create(createTourInput);
   }
 
-  @Query(() => [Tour], { name: 'tours' })
-  findAll() {
+  @Query(() => [Tour], { name: 'getAllTours' })
+  async findAll() {
     return this.toursService.findAll();
   }
 
-  @Query(() => Tour, { name: 'tour' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.toursService.findOne(id);
+  @Query(() => Tour, { name: 'getTour' })
+  async findOne(@Args('tourId', { type: () => Int }) tourId: number) {
+    return this.toursService.findOne(tourId);
   }
 
   @Mutation(() => Tour)
-  updateTour(@Args('updateTourInput') updateTourInput: UpdateTourInput) {
-    return this.toursService.update(updateTourInput.id, updateTourInput);
+  async updateTour(@Args('updateTourInput') updateTourInput: UpdateTourInput) {
+    await this.toursService.update(updateTourInput);
+    return this.toursService.findOne(updateTourInput.tourId);
   }
 
   @Mutation(() => Tour)
-  removeTour(@Args('id', { type: () => Int }) id: number) {
-    return this.toursService.remove(id);
+  async removeTour(@Args('tourId', { type: () => Int }) tourId: number) {
+    return this.toursService.remove(tourId);
   }
 }
