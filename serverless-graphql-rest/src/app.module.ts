@@ -24,27 +24,37 @@ import { ToursModule } from './tours/tours.module';
     //Remove optional Websocket subscription, if not using this Apollo Server feature
     GraphQLModule.forRootAsync<ApolloDriverConfig>({
       driver: ApolloDriver,
-      useFactory: () => ({
-        //useFactory: (authService: AuthService) => ({
-        autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-        /*subscriptions: {
-          'graphql-ws': {
-            onConnect: (context: any) => {
-              try {
-                const incomingRequest = context.extra.request;
-                const user = authService.verifyWs(incomingRequest);
-                context.user = user;
-              } catch (err) {
-                new Logger().error(err);
-                throw new UnauthorizedException();
-              }
+      useFactory: (configService: ConfigService) => {
+        const isProduction = configService.get('NODE_ENV') === 'production';
+
+        return {
+          //useFactory: (authService: AuthService) => ({
+          //do not crreate schema file when running in Lambda, Lambda will not allow writing, unless it is tmp folder
+          autoSchemaFile: isProduction
+            ? undefined
+            : join(process.cwd(), 'src/schema.gql'),
+          typePaths: ['./**/*.gql'],
+          /*subscriptions: {
+            'graphql-ws': {
+              onConnect: (context: any) => {
+                try {
+                  const incomingRequest = context.extra.request;
+                  const user = authService.verifyWs(incomingRequest);
+                  context.user = user;
+                } catch (err) {
+                  new Logger().error(err);
+                  throw new UnauthorizedException();
+                }
+              },
             },
-          },
-        },*/
-      }),
+          },*/
+        };
+      },
+      inject: [ConfigService],
       //imports: [AuthModule],
       //inject: [AuthService],
     }),
+
     //logging modules for better logging
     LoggerModule.forRootAsync({
       useFactory: (configService: ConfigService) => {

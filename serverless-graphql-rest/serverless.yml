@@ -2,6 +2,18 @@ service: serverless-graphql-rest
 
 plugins:
   - serverless-offline
+  - serverless-plugin-optimize
+  - serverless-dynamodb
+
+package:
+  exclude:
+    - .git/**
+    - src/**
+    - test/**
+    - nodemon.json
+    - sample.graphql
+    - README.md
+  excludeDevDependencies: true
 
 provider:
   name: aws
@@ -10,18 +22,11 @@ provider:
   profile: default # Config your AWS Profile
   environment: # Service wide environment variables
     NODE_ENV: production
-
-package:
-  exclude:
-    - .git/**
-    - src/**
-    - test/**
-    - nodemon.json
-    - README.md
-  excludeDevDependencies: true
+    # AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    # NODE_OPTIONS: --enable-source-maps --stack-trace-limit=1000
 
 functions:
-  index:
+  app:
     handler: dist/serverless.handler
     events:
       - http:
