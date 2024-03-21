@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@nestjs/mongoose": "^10.0.4",
+    "migrate-mongo": "^11.0.0",
+    "mongoose": "^8.2.2"
+  },
+  "devDependencies": {
+    "@types/migrate-mongo": "^10.0.4"
+  }
+}

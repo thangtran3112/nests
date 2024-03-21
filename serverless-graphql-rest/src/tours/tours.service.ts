@@ -18,6 +18,10 @@ export class ToursService {
     return this.findOne(createTourInput.tourId);
   }
 
+  async countTours() {
+    return ToursService.tours.length;
+  }
+
   async findAll(): Promise<Tour[]> {
     return ToursService.tours;
   }

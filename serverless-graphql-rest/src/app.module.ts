@@ -9,6 +9,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { BooksModule } from './books/books.module';
 import { ToursModule } from './tours/tours.module';
+import { DatabaseModule } from 'databases/mongoose/database.module';
 
 //https://docs.nestjs.com/techniques/configuration#schema-validation
 @Module({
@@ -54,7 +55,6 @@ import { ToursModule } from './tours/tours.module';
       //imports: [AuthModule],
       //inject: [AuthService],
     }),
-
     //logging modules for better logging
     LoggerModule.forRootAsync({
       useFactory: (configService: ConfigService) => {
@@ -78,6 +78,8 @@ import { ToursModule } from './tours/tours.module';
     }),
     BooksModule,
     ToursModule,
+    // Enabling DatabaseModule only if we have mongod local server or Atlas server
+    // DatabaseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
