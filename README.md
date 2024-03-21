@@ -1,2 +1,2 @@
 # nest-practices
-Nest JS practices
+Nest JS Boilerplate codes for various platforms and Database Abstraction
