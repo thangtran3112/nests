@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "./nest-graphql-serverless"
+		},
+		{
+			"path": "./terraform-nest-graphql"
 		}
 	],
 	"settings": {}

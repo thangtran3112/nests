@@ -1,12 +1,12 @@
 # NestJS GraphQL Boilerplate codes
-* Boiler plate code for NestJS with Node20x
+* Ready to use template with NestJS v10 and Node@20
+* REST API and GraphQL API on the same baseURL
 * Deployment with AWS Serverless on Api Gateway and Lambda
-* Deployment with AWS on ECS
-* Deployment with Google Cloud Function
-* Reference: https://github.com/nestjs/docs.nestjs.com/issues/96
+* Deployment with Google Cloud Function (TODO)
+
 
 ## Description
-* On local, REST API and GraphQL can both be exposed at the same time on: `localhost:3000` and `localhost:3000/graphql`
+* On local, REST API root at `localhost:3000/books` and GraphQL at: `localhost:3000/graphql`
 * On AWS, API Gateway will need to be configured to point to <LambdaURL> or <LambdaURL/graphql>
 
 ## Installation
@@ -25,7 +25,6 @@ $ npm install
 
 ```bash
 # development
-$ ada credentials update --account=058264141888 --provider=conduit --role=IibsAdminAccess-DO-NOT-DELETE --once
 $ npm run start
 
 # watch mode
@@ -59,11 +58,13 @@ $ npm run test:cov
 ```
 
 ## API Gateway with both REST and GraphQL available at the same time
+* When the Schema is simple, both REST and GraphQL has average execution time of 20-30 ms
+* Lambda cold-start is about 2500ms
 * ![GraphQL Request](./images/graphQLRequest.png)
 * ![GraphQL Response](./images/graphQLResponse.png)
 * ![REST Request](./images/restRequest.png)
-* When the Schema is simple, both REST and GraphQL has average execution time of 20-30 ms
-* Lambda cold-start is about 2500ms
+* ![Postman GraphQL Request](./images/postmanGraphQL.png)
+
 
 ## References
 * [Scalfolding Nest](https://docs.nestjs.com/)
@@ -81,3 +82,4 @@ npm i @codegenie/serverless-express aws-lambda
 npm i -D @types/aws-lambda serverless-offline
 ```
 * [Official Serverless Instructions](https://www.serverless.com/framework/docs/tutorial)
+* Deploy [NestJS on different cloud platforms](https://github.com/nestjs/docs.nestjs.com/issues/96)
