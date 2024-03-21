@@ -1,7 +1,3 @@
-# Article
-
-Detailed article here https://habr.com/ru/post/599797/
-
 # Setup
 ```
 cd app && yarn
@@ -45,4 +41,8 @@ cd app && yarn start:dev
 
 ### 4.2 run location endpoint on Lambda
 ![lambda graphql](./gif/lambda-graphql.gif)
+
+### Discussion and Explanation:
+
+Detailed article here https://habr.com/ru/post/599797/
 

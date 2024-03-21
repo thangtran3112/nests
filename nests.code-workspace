@@ -4,10 +4,7 @@
 			"path": "./serverless-graphql-rest"
 		},
 		{
-			"path": "./nest-graphql-serverless"
-		},
-		{
-			"path": "./terraform-nest-graphql"
+			"path": "./terraform-docker-graphql"
 		}
 	],
 	"settings": {}

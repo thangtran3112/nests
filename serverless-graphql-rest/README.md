@@ -9,6 +9,11 @@
 * On local, REST API root at `localhost:3000/books` and GraphQL at: `localhost:3000/graphql`
 * On AWS, API Gateway will need to be configured to point to <LambdaURL> or <LambdaURL/graphql>
 
+## MongoDB Mongoose TypeORM
+* MongoDB: Abstract Repository, AbtractEntity, and ready-to-use database module
+* Add a local Mongod server or Create an Atlas cloud server and Enable all commented-out `DatabaseModule` and `ToursRepository`
+* Nest will fail to init, if there is no proper MONGODB_URI, or mongoose cannot connect to datagbase
+
 ## Installation
 
 ```bash
@@ -83,3 +88,6 @@ npm i -D @types/aws-lambda serverless-offline
 ```
 * [Official Serverless Instructions](https://www.serverless.com/framework/docs/tutorial)
 * Deploy [NestJS on different cloud platforms](https://github.com/nestjs/docs.nestjs.com/issues/96)
+* [Mongo DB Abstraction](https://docs.nestjs.com/techniques/mongodb) layer with `@nestjs/mongoose` and `mongoose`
+* [Mongo DB migrate-mongo](https://medium.com/@ashansube/managing-mongodb-database-migrations-in-node-js-with-migrate-mongo-9a510dbfd868):
+`npm i migrate-mongo && npm i -D @types/migrate-mongo`
