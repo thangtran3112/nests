@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "./serverless-graphql-rest"
+			"path": "./api-graphql-rest"
 		},
 		{
 			"path": "./terraform-docker-graphql"

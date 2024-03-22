@@ -1,5 +1,5 @@
 {
-  "name": "serverless-graphql-rest",
+  "name": "api-graphql-rest",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "clean": "rm -rf dist .serverless build",
-    "build": "nest build && npm run copyfiles && sls package && npm run build:prod",
+    "build": "npm run clean && nest build && npm run copyfiles && sls package && npm run build:prod",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "sls:offline": "npm run build && npx sls offline start",

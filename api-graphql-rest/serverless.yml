@@ -1,4 +1,4 @@
-service: serverless-graphql-rest
+service: graphql-rest
 
 plugins:
   - serverless-offline

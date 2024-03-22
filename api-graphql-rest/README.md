@@ -48,9 +48,9 @@ $ npm run build
 * Option 3: use `vite` and `esbuild` to bundling into 1 single javascript file. (TODO)
 
 ## AWS Deployment
-* Option 1: `npm run deploy:sls`, make sure that `pino` logger and `autoSchemaFile` are not run in Production
+* Option 1: Using CDK deployment, use the sibbling package `cdk-graphql-rest`
+* Option 2: `npm run deploy:sls`, make sure that `pino` logger and `autoSchemaFile` are not run in Production
   Lambda does not allow write permission on run-time code, except for /tmp folder.
-* Option 2: Using CDK deployment (TODO)
 * Make sure to [enable CORS on Api Gateway](https://docs.datomic.com/cloud/tech-notes/cors-lambda-proxy.html)
 
 ## Test
