@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "./terraform-docker-graphql"
+		},
+		{
+			"path": "./cdk-graphql-rest"
 		}
 	],
 	"settings": {}

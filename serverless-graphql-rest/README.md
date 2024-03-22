@@ -37,11 +37,15 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+# build
+$ npm run build
 ```
 
 ## Build
-* For `nest build` or `tsc`, and start the Lambda function locally:
-* Local lambda build: `npm run build && npx serverless offline`
+* Option 1: use the *.zip file inside `.serverless` folder
+* Option 2: use `/build` folder, in which, we can deploy the production `node_modules` into a Lambda Layer
+* Option 3: use `vite` and `esbuild` to bundling into 1 single javascript file. (TODO)
 
 ## AWS Deployment
 * Option 1: `npm run deploy:sls`, make sure that `pino` logger and `autoSchemaFile` are not run in Production
@@ -91,3 +95,4 @@ npm i -D @types/aws-lambda serverless-offline
 * [Mongo DB Abstraction](https://docs.nestjs.com/techniques/mongodb) layer with `@nestjs/mongoose` and `mongoose`
 * [Mongo DB migrate-mongo](https://medium.com/@ashansube/managing-mongodb-database-migrations-in-node-js-with-migrate-mongo-9a510dbfd868):
 `npm i migrate-mongo && npm i -D @types/migrate-mongo`
+* Using `serverless package` with `excludes` to zip the final build. [Serverless Package](https://www.serverless.com/framework/docs/providers/aws/cli-reference/package)
