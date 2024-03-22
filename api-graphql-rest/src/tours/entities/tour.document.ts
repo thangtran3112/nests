@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { AbstractEntity } from 'databases/mongoose/abstract.entity';
+import { AbstractEntity } from '../../databases/mongoose/abstract.entity';
 
 @Schema()
 export class TourDocument extends AbstractEntity {

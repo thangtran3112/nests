@@ -1,4 +1,4 @@
-service: serverless-graphql-rest
+service: graphql-rest
 
 plugins:
   - serverless-offline
@@ -13,6 +13,14 @@ package:
     - test/**
     - nodemon.json
     - sample.graphql
+    - .env.*
+    - .eslintrc.*
+    - .prettierrc
+    - nest-cli.json
+    - tsconfig.json
+    - tsconfig.build.json
+    - ada/**
+    - build/**
     - README.md
   excludeDevDependencies: true
 

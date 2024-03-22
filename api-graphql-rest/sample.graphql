@@ -50,7 +50,7 @@ mutation removeAbc {
 ## Sample Query in Api Gateway:
 Method type: POST
 proxy: graphql
-context-type:application/json
+content-type:application/json
 Request body:
 { 
   "query" : "query getAllBlahBlah{\n  getAllTours {\n    tourId,\n    name\n  }\n}"
