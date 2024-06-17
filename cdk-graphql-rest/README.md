@@ -2,6 +2,8 @@
 
 - This would require the api-graphql-rest/build on the sibbling folder.
 - [Understand CORS setup with Api gateway](https://dev.to/aws-builders/your-complete-api-gateway-and-cors-guide-11jb)
+- If using Appsync -> HTTP Datasource (ApiGateway) -> proxy Lambda. Please see the [Appsync JS Http Tutorial](https://docs.aws.amazon.com/appsync/latest/devguide/tutorial-http-resolvers-js.html)
+- See `lib/appsync/graphql-schema.graphql` and `lib/appsync/resolver.js` for sample schema and resolver configurations.
 
 ## Reference
 
