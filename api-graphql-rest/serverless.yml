@@ -8,6 +8,9 @@ plugins:
 package:
   exclude:
     - images/**
+    - esbuild/**
+    - bundle/**
+    - ada/**
     - .git/**
     - src/**
     - test/**

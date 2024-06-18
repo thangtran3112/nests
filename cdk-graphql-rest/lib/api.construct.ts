@@ -17,9 +17,9 @@ export interface ApiConstructProps {
 
 const API_NODE_MODULES = resolve(
   __dirname,
-  '../../api-graphql-rest/build/node_modules',
+  '../../api-graphql-rest/bundle/node_modules',
 );
-const API_BUILD_FOLDER = resolve(__dirname, '../../api-graphql-rest/build');
+const API_BUILD_FOLDER = resolve(__dirname, '../../api-graphql-rest/bundle');
 const SERVERLESS_ZIP_PACKAGE = resolve(
   __dirname,
   '../../api-graphql-rest/.serverless/graphql-rest.zip',
@@ -68,8 +68,11 @@ export class ApiConstruct extends Construct {
   constructor(scope: Construct, id: string) {
     super(scope, id);
 
-    // add handler to respond to all our api requests
+    // add handler to respond to all our api requests. Serverless way of deployment (WORKING)
     const lambdaFunction = this.createLambdaFromZipPackage(this);
+
+    // Esbuild bundling deployment (NOT YET WORKING)
+    // const lambdaFunction = this.createLambdaWithLayer(this);
 
     const api = new RestApi(this, `graphql-rest-api`, {
       defaultCorsPreflightOptions: {
