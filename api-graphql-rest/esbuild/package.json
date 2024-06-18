@@ -1,0 +1,17 @@
+{
+  "name": "esbuild",
+  "version": "1.0.0",
+  "description": "Rebuilding esbuild external dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@nestjs/apollo": "12.1.0",
+    "@nestjs/common": "10.3.9",
+    "@nestjs/core": "10.3.9",
+    "@nestjs/graphql": "12.1.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
