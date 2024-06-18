@@ -4,5 +4,6 @@ type Book {
 }
 
 type Query {
-  getBooks: Book
+  apgwBooks: Book
+  lambdaBooks: Book
 }
