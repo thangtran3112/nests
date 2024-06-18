@@ -1,5 +1,7 @@
 import { util } from '@aws-appsync/utils';
-
+/**
+ * NOTE: not working yet. The VTL Resolver for Lambda is working
+ */
 export function request(ctx) {
   return {
     version: '2018-05-29',

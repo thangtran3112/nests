@@ -1,1 +1,4 @@
-export class CreateBookDto {}
+export class CreateBookDto {
+  readonly name: string;
+  readonly id: string;
+}

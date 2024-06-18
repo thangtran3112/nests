@@ -1,0 +1,32 @@
+## [Request template](https://docs.aws.amazon.com/appsync/latest/devguide/tutorial-http-resolvers.html):
+
+```
+{
+    "version": "2018-05-29",
+    "method": "POST",
+    "resourcePath": "/books",
+    "params":{
+      "headers":{
+        "Content-Type": "application/json",
+      },
+      "body": $util.toJson($ctx.args.input)
+    }
+}
+```
+
+## [Response template](https://docs.aws.amazon.com/appsync/latest/devguide/tutorial-http-resolvers.html):
+
+```
+  ## Raise a GraphQL field error in case of a datasource invocation error
+  #if($ctx.error)
+      $util.error($ctx.error.message, $ctx.error.type)
+  #end
+  ## if the response status code is not 200, then return an error. Else return the body **
+  #if($ctx.result.statusCode == 201 || $ctx.result.statusCode == 200)
+      ## If response is 201, return the body.
+      $ctx.result.body
+  #else
+      ## If response is not 200, append the response to error block.
+      $utils.appendError($ctx.result.body, "$ctx.result.statusCode")
+  #end
+```

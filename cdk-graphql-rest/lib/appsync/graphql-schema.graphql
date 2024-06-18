@@ -3,7 +3,16 @@ type Book {
   name: String!
 }
 
+input Input {
+  name: String!
+  id: String!
+}
+
+type Mutation {
+  createBook(input: Input!): Book
+}
+
 type Query {
-  apgwBooks: Book
+  getBooks: Book
   lambdaBooks: Book
 }
