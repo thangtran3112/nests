@@ -1,0 +1,17 @@
+{
+  "name": "fastify-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "fastify": "^3.27.1"
+  },
+  "devDependencies": {
+    "vite": "^4.0.4",
+    "vite-plugin-node": "workspace:*"
+  }
+}
