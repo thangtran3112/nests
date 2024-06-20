@@ -16,7 +16,7 @@ export interface ApiConstructProps {
 }
 const SERVERLESS_ZIP_PACKAGE = resolve(
   __dirname,
-  '../api/.serverless/api-rest.zip',
+  '../api-rest/.serverless/api-rest.zip',
 );
 
 export class ApiConstruct extends Construct {
