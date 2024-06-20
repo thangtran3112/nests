@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { RestStack } from '../lib/rest-stack';
+import { RestStack } from '../lib/graphql-rest-stack';
 
 const app = new cdk.App();
 new RestStack(app, 'WebpackNestStack', {
