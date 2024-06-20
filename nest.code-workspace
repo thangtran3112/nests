@@ -1,0 +1,20 @@
+{
+  "folders": [
+	{
+		"path": "api-graphql-rest"
+	},
+	{
+		"path": "cdk-graphql-rest"
+	},
+	{
+		"path": "cdk-rest-webpack"
+	},
+	{
+		"path": "terraform-docker-graphql"
+	},
+	{
+		"path": "vite-plugin-nest-express"
+	}
+],
+  "settings": {}
+}
