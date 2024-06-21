@@ -4,11 +4,14 @@
 
 ## Installation
 
-```bash
+````bash
 $ npm install
-```
 
-## Running the app
+## Running the app as a serverless lambda locally
+```bash
+$ sls offline start
+
+## Running the app as Nest app through main.js
 
 ```bash
 # development
@@ -19,7 +22,7 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
-```
+````
 
 ## Test
 

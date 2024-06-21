@@ -17,12 +17,12 @@ export interface ApiConstructProps {
 
 const API_NODE_MODULES = resolve(
   __dirname,
-  '../../api-graphql-rest/bundle/node_modules',
+  '../api-graphql-rest/bundle/node_modules',
 );
-const API_BUILD_FOLDER = resolve(__dirname, '../../api-graphql-rest/bundle');
+const API_BUILD_FOLDER = resolve(__dirname, '../api-graphql-rest/bundle');
 const SERVERLESS_ZIP_PACKAGE = resolve(
   __dirname,
-  '../../api-graphql-rest/.serverless/graphql-rest.zip',
+  '../api-graphql-rest/.serverless/graphql-rest.zip',
 );
 
 export class ApiConstruct extends Construct {
