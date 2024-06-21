@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@apollo/server": "^4.10.4",
-    "@codegenie/serverless-express": "^4.14.1",
     "@nestjs/apollo": "^12.1.0",
     "@nestjs/common": "^10.3.9",
     "@nestjs/config": "^3.2.2",
@@ -37,6 +36,7 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/mongoose": "^10.0.6",
     "@nestjs/platform-express": "^10.3.9",
+    "@vendia/serverless-express": "^4.12.6",
     "aws-lambda": "^1.0.7",
     "graphql": "^16.8.2",
     "joi": "^17.13.1",

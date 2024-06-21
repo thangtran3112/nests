@@ -5,6 +5,7 @@ package:
 
 plugins:
   - serverless-webpack
+  - serverless-offline
 
 provider:
   name: aws
