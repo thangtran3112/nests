@@ -13,6 +13,7 @@ $ aws appsync create-data-source --api-id <API-ID> \
 - See JS Resolver for `getBooks` query, and VTL resolver for `createBooks` mutation
 - It is also possible to use JS Resolver for `createBooks`
 - We may need to forward `idToken` from Cognito, if authed by Cognito. Enabled `Allowed Headers` in Lambda
+- ![Configure Lambda Function Url](./lib/appsync/lamba-function-url-config.png)
 
 ## Installation
 
