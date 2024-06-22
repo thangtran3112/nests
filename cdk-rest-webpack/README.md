@@ -1,5 +1,19 @@
 # CDK solution
 
+- If deployment on Appsync as a Http datasource with IAM authentication. [Follow this guideline](https://advancedweb.hu/use-the-http-data-source-to-interact-with-http-apis-directly-from-appsync/)
+- See lib/appsync folder for `http.json`, which we need to upload through CLI or CDK
+- [Command to upload](https://docs.aws.amazon.com/appsync/latest/devguide/tutorial-http-resolvers-js.html#invoking-aws-services-js) in case of using CLI, or by using AWS CloudShell: 
+```bash
+$ aws appsync create-data-source --api-id <API-ID> \
+                               --name AWSAppSync \
+                               --type HTTP \
+                               --http-config file://http.json \
+                               --service-role-arn <ROLE-ARN>
+```
+- See JS Resolver for `getBooks` query, and VTL resolver for `createBooks` mutation
+- It is also possible to use JS Resolver for `createBooks`
+- We may need to forward `idToken` from Cognito, if authed by Cognito. Enabled `Allowed Headers` in Lambda
+
 ## Installation
 
 - Navigate to ./api and run `npm run build-lambda`
