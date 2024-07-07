@@ -24,7 +24,7 @@ export class ApiConstruct extends Construct {
       code: Code.fromAsset(EXPRESS_BUILD_FOLDER),
       memorySize: 1024,
       timeout: Duration.seconds(30),
-      handler: 'handler',
+      handler: 'handler.handler',
       runtime: Runtime.NODEJS_20_X,
       environment: {
         NODE_ENV: 'production',
