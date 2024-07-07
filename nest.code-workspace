@@ -15,6 +15,9 @@
     {
       "name": "vite-plugin-nest-express",
       "path": "vite-plugin-nest-express"
+    },
+    {
+      "path": "cdk-rest-express"
     }
   ],
   "settings": {}

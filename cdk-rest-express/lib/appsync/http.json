@@ -1,0 +1,10 @@
+{
+  "endpoint": "https://zfaja3qsyr524pzt3p7fqhfdsi0jsiuj.lambda-url.us-east-1.on.aws/",
+  "authorizationConfig": {
+    "authorizationType": "AWS_IAM",
+    "awsIamConfig": {
+      "signingRegion": "us-east-1",
+      "signingServiceName": "lambda-url"
+    }
+  }
+}
