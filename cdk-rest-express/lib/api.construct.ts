@@ -14,24 +14,19 @@ import { Duration } from 'aws-cdk-lib';
 export interface ApiConstructProps {
   userPool: IUserPool;
 }
-const SERVERLESS_ZIP_PACKAGE = resolve(
-  __dirname,
-  '../api-express/.serverless/api-express.zip',
-);
+const EXPRESS_BUILD_FOLDER = resolve(__dirname, '../api/build');
 
 export class ApiConstruct extends Construct {
   //Option to create Lambda from a Full zip file
-  private createLambdaFromZipPackage(scope: Construct, id: string) {
+  private createLambda(scope: Construct, id: string) {
     // add handler to respond to all our api requests
     return new LambdaFunction(this, `${id}Handler`, {
-      code: Code.fromAsset(SERVERLESS_ZIP_PACKAGE),
+      code: Code.fromAsset(EXPRESS_BUILD_FOLDER),
       memorySize: 1024,
       timeout: Duration.seconds(30),
-      handler: 'src/serverless.handler',
+      handler: 'handler',
       runtime: Runtime.NODEJS_20_X,
       environment: {
-        //without this option, the Lambda will try to generate schema.gql inside the Runtime
-        //which is not allowed by Lambda
         NODE_ENV: 'production',
       },
     });
@@ -41,7 +36,7 @@ export class ApiConstruct extends Construct {
     super(scope, id);
 
     // add handler to respond to all our api requests. Serverless way of deployment (WORKING)
-    const lambdaFunction = this.createLambdaFromZipPackage(this, id);
+    const lambdaFunction = this.createLambda(this, id);
 
     // Esbuild bundling deployment (NOT YET WORKING)
     // const lambdaFunction = this.createLambdaWithLayer(this, id);
