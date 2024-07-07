@@ -7,6 +7,6 @@ export class RestStack extends Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new ApiConstruct(this, `${id}ApiTestConstruct`);
+    new ApiConstruct(this, `${id}ExpressApi`);
   }
 }
