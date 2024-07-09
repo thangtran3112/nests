@@ -1,7 +1,9 @@
-import { util } from '@aws-appsync/utils';
 /**
- * NOTE: not working yet. The VTL Resolver for Lambda is working
+ * Sends a request to the attached data source
+ * @param {import('@aws-appsync/utils').Context} ctx the context
+ * @returns {*} the request
  */
+import { util } from '@aws-appsync/utils';
 export function request(ctx) {
   return {
     version: '2018-05-29',
@@ -11,8 +13,7 @@ export function request(ctx) {
         'Content-Type': 'application/json',
       },
     },
-    resourcePath: `/books`,
-    // resourcePath: `/books/${ctx.args.id}`,
+    resourcePath: `/memo`,
   };
 }
 
