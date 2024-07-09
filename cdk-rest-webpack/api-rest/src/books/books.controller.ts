@@ -6,22 +6,33 @@ import {
   Patch,
   Param,
   Delete,
+  Req,
+  Headers,
 } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
+import { Request } from 'express';
 
 @Controller('books')
 export class BooksController {
   constructor(private readonly booksService: BooksService) {}
 
   @Post()
-  create(@Body() createBookDto: CreateBookDto) {
+  create(
+    @Body() createBookDto: CreateBookDto,
+    @Req() req: Request,
+    @Headers() headers,
+  ) {
+    console.log('req', req);
+    console.log('headers', headers);
     return this.booksService.create(createBookDto);
   }
 
   @Get()
-  findAll() {
+  findAll(@Req() req: Request, @Headers() headers) {
+    console.log('req', req);
+    console.log('headers', headers);
     return this.booksService.findAll();
   }
 

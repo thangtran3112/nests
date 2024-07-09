@@ -7,9 +7,10 @@
   "license": "UNLICENSED",
   "scripts": {
     "clean": "rm -rf dist .serverless build",
-    "build-lambda": "npm run clean && npx sls package",
+    "bundle": "npm run clean && npx sls package",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "local": "npx sls offline",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",

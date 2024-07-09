@@ -7,7 +7,7 @@ export function request(ctx) {
   return {
     version: '2018-05-29',
     method: 'POST',
-    resourcePath: '/books',
+    resourcePath: '/memo',
     params: {
       headers: {
         'Content-Type': 'application/json',
