@@ -1,5 +1,5 @@
 {
-  "endpoint": "https://zfaja3qsyr524pzt3p7fqhfdsi0jsiuj.lambda-url.us-east-1.on.aws/",
+  "endpoint": "https://fsmj5akk4ca6c2axqruzvonh3m0kmynu.lambda-url.us-east-1.on.aws/",
   "authorizationConfig": {
     "authorizationType": "AWS_IAM",
     "awsIamConfig": {

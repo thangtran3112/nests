@@ -11,8 +11,7 @@ export function request(ctx) {
         'Content-Type': 'application/json',
       },
     },
-    resourcePath: `/books`,
-    // resourcePath: `/books/${ctx.args.id}`,
+    resourcePath: `/memo`,
   };
 }
 

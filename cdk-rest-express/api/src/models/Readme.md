@@ -1,3 +1,0 @@
-- Models could be Mongoose ODM models for MongoDB
-- Prisma/Drizzle ORM models can be used for PostgreSQL, MySQL, SQLite
-- Dynamo DB (not sure if there is any ODM for it)
