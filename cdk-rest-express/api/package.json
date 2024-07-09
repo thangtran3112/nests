@@ -1,43 +1,25 @@
 {
-  "name": "express-typescript-example",
-  "version": "1.0.0",
-  "description": "Rest API using Node.js, TypeScript, Express",
-  "main": "server.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "bundle": "esbuild src/handler.ts --bundle --outdir=./build --platform=node --sourcemap",
-    "local": "ts-node-dev -r tsconfig-paths/register src/server.ts"
+  "name": "@aws-samples/backend-api",
+  "private": true,
+  "dependencies": {
+    "@codegenie/serverless-express": "^4.14.1",
+    "express": "^4.19.2",
+    "uuid": "^8.3.2"
   },
-  "keywords": [
-    "express",
-    "typescript",
-    "rest",
-    "api",
-    "restapi",
-    "node",
-    "nodejs",
-    "crud"
-  ],
-  "author": "thang.tran",
-  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "bundle": "esbuild handler.ts --bundle --outdir=build --platform=node --sourcemap",
+    "local": "ts-node-dev -r tsconfig-paths/register app.local.ts"
+  },
   "devDependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.14.10",
-    "@types/hpp": "^0.2.6",
-    "ts-node": "^10.9.2",
-    "esbuild": "^0.21.4",
     "@types/aws-lambda": "^8.10.72",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.0",
+    "@types/node": "^20.14.2",
+    "@types/uuid": "^8.3.4",
+    "esbuild": "^0.21.4",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.5.3"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "@codegenie/serverless-express": "^4.14.1",
-    "express-xss-sanitizer": "^1.2.0",
-    "hpp": "^0.2.3"
+    "typescript": "^5.4.5"
   }
 }

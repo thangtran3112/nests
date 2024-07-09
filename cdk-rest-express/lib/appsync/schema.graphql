@@ -1,17 +1,17 @@
-type Book {
-	id: String!
-	name: String!
+type Memo {
+  title: String!
+  content: String!
 }
 
-input Input {
-	name: String!
-	id: String!
+input MemoInput {
+  title: String!
+  content: String!
 }
 
 type Mutation {
-	createBook(input: Input!): Book
+  createMemo(input: MemoInput!): Memo
 }
 
 type Query {
-	getBooks: Book
+  getMemos: Memo
 }
