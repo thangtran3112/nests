@@ -4,7 +4,7 @@
     "authorizationType": "AWS_IAM",
     "awsIamConfig": {
       "signingRegion": "us-east-1",
-      "signingServiceName": "lambda-url"
+      "signingServiceName": "lambda"
     }
   }
 }
